@@ -1,0 +1,72 @@
+{% load static %}
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Estoques de Açaí</title>
+</head>
+<body>
+<div class="container text-center my-4">
+    <h1 class="d-inline" style="color: #6f2c91;">Bem-vindo ao sistema de Açaí!</h1>
+    <img src="{% static 'img/logoacai.png' %}" alt="Açaí" style="width: 100px; height: auto; margin-left: 15px;">
+
+</div>
+
+<div class="container mt-4">
+    <table class="table">
+        <thead class="table-header">
+            <tr>
+                <th scope="col" class="text-white">Produto</th>
+                <th scope="col" class="text-white">Quantidade</th>
+                <th scope="col" class="text-white">Data de Validade</th>
+                <th scope="col" class="text-white">Fornecedor</th>
+                <th scope="col" class="text-white">View</th>
+                <th scope="col" class="text-white">Edit</th>
+                <th scope="col" class="text-white">Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for estoque in object_list %}
+            <tr>
+                <td>{{ estoque.produto }}</td>
+                <td>{{ estoque.quantidade }}</td>
+                <td>{{ estoque.validade }}</td>
+                <td>{{ estoque.fornecedor }}</td>
+                <td>
+                    <a class="btn btn-light btn-custom" href="{% url 'estoque_view' estoque.id %}">View</a>
+                </td>
+                <td>
+                    <a class="btn btn-light btn-custom" href="{% url 'estoque_edit' estoque.id %}">Edit</a>
+                </td>
+                <td>
+                    <a class="btn btn-danger btn-custom" href="{% url 'estoque_delete' estoque.id %}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="text-center">
+        <a class="btn btn-success" href="{% url 'estoque_new' %}">Novo Produto</a>
+    </div>
+</div>
+<style>
+    .table {
+        background-color: #d6c3e4; 
+        border-radius: 15px; 
+        overflow: hidden; 
+    }
+    .table-header {
+        background-color: #6f2c91; 
+    }
+    th, td {
+        text-align: center; 
+    }
+</style>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,43 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Fornecedor</title>
+</head>
+<body>
+<div class="container mt-5">
+    <div class="header text-center mb-4">
+        <h1>Fornecedor</h1>
+    </div>
+    
+    <form method="post">
+        {% csrf_token %}
+        <div class="mb-4">
+            {{ form.as_p }}
+        </div>
+        <div class="text-center">
+            <input type="submit" class="btn btn-success" value="Salvar" />
+        </div>
+    </form>
+</div>
+<style>
+    .header {
+        background-color: #6f2c91; 
+        color: white;
+        padding: 20px;
+        border-radius: 15px; 
+    }
+    input[type="text"],
+    input[type="number"],
+    input[type="date"],
+    input[type="email"] {
+        width: 100%; 
+        border-radius: 15px; 
+        padding: 10px; 
+        border: 1px solid #ccc; 
+        transition: border-color 0.3s; 
+    }
+</style>
+</body>
+</html>

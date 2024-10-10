@@ -1,0 +1,67 @@
+{% load static %}
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Pagamentos</title>
+</head>
+<body>
+    <div class="container text-center my-4">
+        <h1 class="d-inline" style="color: #6f2c91;">Cadastro de Pagamentos - Açaí!</h1>
+        <img src="{% static 'img/logoacai.png' %}" alt="Açaí" style="width: 100px; height: auto; margin-left: 15px;">
+    </div>
+
+    <div class="container mt-4">
+        <table class="table">
+            <thead class="table-header">
+                <tr>
+                    <th scope="col">Data</th>
+                    <th scope="col">Valor</th>
+                    <th scope="col">Método</th>
+                    <th scope="col">View</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for pagamento in object_list %}
+                <tr>
+                    <td>{{ pagamento.data }}</td>
+                    <td>{{ pagamento.valor }}</td>
+                    <td>{{ pagamento.metodo }}</td>
+                    <td>
+                        <a class="btn btn-light" href="{% url 'pagamento_view' pagamento.id %}">View</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-light" href="{% url 'pagamento_edit' pagamento.id %}">Edit</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-danger" href="{% url 'pagamento_delete' pagamento.id %}">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="text-center">
+            <a class="btn btn-success" href="{% url 'pagamento_new' %}">Novo Pagamento</a>
+        </div>
+    </div>
+
+    <style>
+        .table {
+            background-color: #d6c3e4; 
+            border-radius: 15px; 
+            overflow: hidden; 
+        }
+        .table-header {
+            background-color: #6f2c91; 
+            color: white;
+        }
+        th, td {
+            text-align: center; 
+        }
+    </style>
+</body>
+</html>

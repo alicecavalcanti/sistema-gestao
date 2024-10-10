@@ -1,0 +1,71 @@
+{% load static %}
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Fornecedores</title>
+</head>
+<body>
+    <div class="container text-center my-4">
+        <h1 class="d-inline" style="color: #6f2c91;">Cadastro de Fornecedores - Açaí!</h1>
+        <img src="{% static 'img/logoacai.png' %}" alt="Açaí" style="width: 100px; height: auto; margin-left: 15px;">
+    </div>
+
+    <div class="container mt-4">
+        <table class="table">
+            <thead class="table-header">
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">CNPJ</th>
+                    {% comment %} <th scope="col">Endereço</th> {% endcomment %}
+                    <th scope="col">Telefone</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">View</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for fornecedor in object_list %}
+                <tr>
+                    <td>{{ fornecedor.nome }}</td>
+                    <td>{{ fornecedor.cnpj }}</td>
+                    {% comment %} <td>{{ fornecedor.endereco }}</td> {% endcomment %}
+                    <td>{{ fornecedor.telefone }}</td>
+                    <td>{{ fornecedor.email }}</td>
+                    <td>
+                        <a class="btn btn-light" href="{% url 'fornecedor_view' fornecedor.id %}">View</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-light" href="{% url 'fornecedor_edit' fornecedor.id %}">Edit</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-danger" href="{% url 'fornecedor_delete' fornecedor.id %}">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="text-center">
+            <a class="btn btn-success" href="{% url 'fornecedor_new' %}">Novo Fornecedor</a>
+        </div>
+    </div>
+    
+    <style>
+        .table {
+            background-color: #d6c3e4; 
+            border-radius: 15px; 
+            overflow: hidden; 
+        }
+        .table-header {
+            background-color: #6f2c91; 
+            color: white;
+        }
+        th, td {
+            text-align: center; 
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Detalhes do Pagamento</title>
+</head>
+<body>
+
+<div class="container mt-5">
+    <div class="header text-center mb-4">
+        <h1>Pagamento</h1>
+    </div>
+    <div class="card p-4">
+        <div class="card-body">
+            <h2 class="card-title text-purple">Data: {{ object.data }}</h2>
+            <h2 class="card-title text-purple">Valor: {{ object.valor }}</h2>
+            <h2 class="card-title text-purple">Método: {{ object.metodo }}</h2>
+        </div>
+    </div>
+    <div class="text-center mt-4">
+        <a class="btn btn-success" href="{% url 'pagamento_list' %}">Voltar</a>
+    </div>
+</div>
+
+<style>
+    .text-purple {
+        color: #000; 
+    }
+    .card {
+        background-color: #ffffff; 
+        border-radius: 15px; 
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
+    }
+    .header {
+        background-color: #6f2c91; 
+        color: white;
+        padding: 20px;
+        border-radius: 15px; 
+    }
+</style>
+</body>
+</html>

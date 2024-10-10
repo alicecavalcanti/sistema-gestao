@@ -1,0 +1,32 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Confirmar Exclusão</title>
+</head>
+<body>
+
+<div class="container mt-5">
+    <div class="text-center mb-4">
+        <h1>Confirmação de Exclusão</h1>
+    </div>
+    
+    <div class="card text-center">
+        <div class="card-body">
+            <p>Tem certeza de que deseja excluir "<strong>{{ object }}</strong>"?</p>
+            <form method="post">
+                {% csrf_token %}
+                <input type="submit" class="btn btn-danger" value="Excluir" />
+            </form>
+        </div>
+    </div>
+</div>
+<style>
+    .card {
+        background-color: #e7d3f2;
+        border-radius: 15px;
+    }
+</style>
+</body>
+</html>
