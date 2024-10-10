@@ -8,7 +8,7 @@ Este projeto visa ajudar uma açaíteria a administrar suas lojas de forma mais 
 
 2- Gestão de Fornecedores: CRUD com informações de contato,  facilitando o reabastecimento de estoque e a comunicação com os fornecedores. 
 
-2- Controle de Pagamentos: Registra data, valor e forma de pagamento, oferecendo controle sobre as vendas e lucros diários.
+3- Controle de Pagamentos: Registra data, valor e forma de pagamento, oferecendo controle sobre as vendas e lucros diários.
 
 4 - Gerenciamento de Produtos e Estoque: Monitora o estoque em tempo real, indicando o que está disponível e o que precisa ser reposto.
 
