@@ -1,6 +1,6 @@
 # Descrição do Projeto
 
-Este projeto visa ajudar uma açaíteria a administrar suas lojas de forma mais eficiente, oferecendo um sistema completo de gestão que inclui gestão de pedidos, gestão de fornecedores, gestão de estoque e gestão de pagamentos
+Este projeto visa ajudar uma açaíteria a administrar suas lojas de forma mais eficiente, oferecendo um sistema completo de gestão que inclui gestão de pedidos, de fornecedores,  de estoque e  de pagamentos.
 
 ## Definição e justificativa dos componentes
 
